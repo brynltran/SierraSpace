@@ -1,0 +1,20 @@
+/home/brtr7527/sierraspace/radar/test5.py:106: UserWarning: frames=None which we can infer the length of, did not pass an explicit *save_count* and passed cache_frame_data=True.  To avoid a possibly unbounded cache, frame data caching has been disabled. To suppress this warning either pass `cache_frame_data=False` or `save_count=MAX_FRAMES`.
+  ani = FuncAnimation(fig, animate, fargs=(ser, ax, sc), interval=100)
+Traceback (most recent call last):
+  File "/home/brtr7527/.local/lib/python3.9/site-packages/matplotlib/backend_bases.py", line 1233, in _on_timer
+    ret = func(*args, **kwargs)
+  File "/home/brtr7527/.local/lib/python3.9/site-packages/matplotlib/animation.py", line 1427, in _step
+    still_going = super()._step(*args)
+  File "/home/brtr7527/.local/lib/python3.9/site-packages/matplotlib/animation.py", line 1121, in _step
+    self._draw_next_frame(framedata, self._blit)
+  File "/home/brtr7527/.local/lib/python3.9/site-packages/matplotlib/animation.py", line 1140, in _draw_next_frame
+    self._draw_frame(framedata)
+  File "/home/brtr7527/.local/lib/python3.9/site-packages/matplotlib/animation.py", line 1768, in _draw_frame
+    self._drawn_artists = self._func(framedata, *self._args)
+  File "/home/brtr7527/sierraspace/radar/test5.py", line 90, in animate
+    read_and_process_tlvs(ser, frame_header.num_tlvs, ax, sc)
+  File "/home/brtr7527/sierraspace/radar/test5.py", line 96, in read_and_process_tlvs
+    tlv_data = ser.read(tlv_length - struct.calcsize(TLV_HEADER_FORMAT))
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 577, in read
+    raise SerialException(
+serial.serialutil.SerialException: device reports readiness to read but returned no data (device disconnected or multiple access on port?)
